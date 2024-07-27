@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql=true:
+    show_sql: true
+    open-in-view: false
+    hibernate:
+      ddl_auto: validate
+
+  liquibase:
+    enabled: true
+    change-log: classpath:liquibase/changelog-master.yml
+    database-change-log-table: DATABASECHANGELOG
+    database-change-log-lock-table: DATABASECHANGELOGLOCK

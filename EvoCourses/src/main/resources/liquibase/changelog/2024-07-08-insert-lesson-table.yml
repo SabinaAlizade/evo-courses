@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-07-08-insert-lesson-table
+      author: Sabina Alizada
+      description: "insert lessons"
+      changes:
+        - insert:
+            tableName: lesson
+            columns:
+              - column:
+                  name: LESSON_TITLE
+                  value: "FrontEnd"
+              - column:
+                  name: IS_ACTIVE
+                  value: true
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+        - insert:
+            tableName: lesson
+            columns:
+              - column:
+                  name: LESSON_TITLE
+                  value: "BackEnd"
+              - column:
+                  name: IS_ACTIVE
+                  value: true
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+        - insert:
+            tableName: lesson
+            columns:
+              - column:
+                  name: LESSON_TITLE
+                  value: "Data Analytics"
+              - column:
+                  name: IS_ACTIVE
+                  value: true
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+        - insert:
+            tableName: lesson
+            columns:
+              - column:
+                  name: LESSON_TITLE
+                  value: "UI/Ux Designer"
+              - column:
+                  name: IS_ACTIVE
+                  value: true
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"

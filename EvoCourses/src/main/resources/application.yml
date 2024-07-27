@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: EvoCourses
+
+  profiles:
+    include:
+      - server
+      - db
