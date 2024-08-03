@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-07-29-insert-teacher-table
+      author: Sabina Alizada
+      description: "insert teachers"
+      changes:
+        - insert:
+            tableName: teacher
+            columns:
+              - column:
+                  name: TEACHER_NAME
+                  value: "Teacher_n 1"
+              - column:
+                  name: TEACHER_SURNAME
+                  value: "Teacher_s 1"
+              - column:
+                  name: LESSON_COUNT
+                  value: 2
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+        - insert:
+            tableName: teacher
+            columns:
+              - column:
+                  name: TEACHER_NAME
+                  value: "Teacher_n 2"
+              - column:
+                  name: TEACHER_SURNAME
+                  value: "Teacher_s 2"
+              - column:
+                  name: LESSON_COUNT
+                  value: 1
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+        - insert:
+            tableName: teacher
+            columns:
+              - column:
+                  name: TEACHER_NAME
+                  value: "Teacher_n 3"
+              - column:
+                  name: TEACHER_SURNAME
+                  value: "Teacher_s 3"
+              - column:
+                  name: LESSON_COUNT
+                  value: 3
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"

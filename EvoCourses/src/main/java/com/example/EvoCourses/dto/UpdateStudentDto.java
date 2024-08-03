@@ -1,6 +1,5 @@
 package com.example.EvoCourses.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateLessonDto {
+public class UpdateStudentDto {
 
-    @NotBlank(message = "Lesson name cannot be null")
-    private String lessonTitle;
+    private String studentName;
 
-    private Boolean isActive;
+    private String studentSurname;
+
+    private String studentAddress;
+
+    private String phoneNumber;
 
 }

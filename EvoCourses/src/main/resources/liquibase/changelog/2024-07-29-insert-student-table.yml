@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2024-07-29-insert-student-table
+      author: Sabina Alizada
+      description: "insert students"
+      changes:
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: STUDENT_NAME
+                  value: "Student_n 1"
+              - column:
+                  name: STUDENT_SURNAME
+                  value: "Student_s 1"
+              - column:
+                  name: STUDENT_ADDRESS
+                  value: "Address 1"
+              - column:
+                  name: PHONE_NUMBER
+                  value: "+994555555555"
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+        - insert:
+            tableName: student
+            columns:
+              - column:
+                  name: STUDENT_NAME
+                  value: "Student_n 2"
+              - column:
+                  name: STUDENT_SURNAME
+                  value: "Student_s 2"
+              - column:
+                  name: STUDENT_ADDRESS
+                  value: "Address 2"
+              - column:
+                  name: PHONE_NUMBER
+                  value: "+994555555556"
+              - column:
+                  name: CREATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"
+              - column:
+                  name: UPDATED_AT
+                  valueDate: "CURRENT_TIMESTAMP"

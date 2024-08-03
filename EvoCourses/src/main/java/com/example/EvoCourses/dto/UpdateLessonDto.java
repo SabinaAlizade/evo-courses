@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UpdateLessonDto {
 
-    private String title;
+    private String lessonTitle;
     private Boolean isActive;
 
 }

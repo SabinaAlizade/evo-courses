@@ -24,10 +24,7 @@ public class LessonServiceImpl implements LessonService{
     public LessonDto createLesson(CreateLessonDto createLessonDto) {
         LessonEntity lessonEntity = lessonRepository.save(lessonMapper.toLessonEntity(createLessonDto));
 
-        LessonDto lessonDto = lessonMapper.toLessonDto(lessonEntity);
-        lessonDto.setTitle(createLessonDto.getTitle());
-
-        return lessonDto;
+        return lessonMapper.toLessonDto(lessonEntity);
 
     }
 
@@ -38,10 +35,7 @@ public class LessonServiceImpl implements LessonService{
 
         LessonEntity lessonEntity = lessonRepository.save(lessonMapper.toLessonEntity(updateLessonDto, lessonById));
 
-        LessonDto lessonDto = lessonMapper.toLessonDto(lessonEntity);
-        lessonDto.setTitle(lessonById.getLessonTitle());
-
-        return lessonDto;
+        return lessonMapper.toLessonDto(lessonEntity);
 
     }
 
@@ -53,10 +47,8 @@ public class LessonServiceImpl implements LessonService{
         lessonById.setIsActive(false);
 
         LessonEntity lessonEntity = lessonRepository.save(lessonById);
-        LessonDto lessonDto = lessonMapper.toLessonDto(lessonEntity);
-        lessonDto.setTitle(lessonById.getLessonTitle());
 
-        return lessonDto;
+        return lessonMapper.toLessonDto(lessonEntity);
 
     }
 
@@ -66,10 +58,8 @@ public class LessonServiceImpl implements LessonService{
                 .orElseThrow(() -> new LessonNotFoundException("Lesson id " + id + " not found"));
 
         lessonRepository.deleteById(id);
-        LessonDto lessonDto = lessonMapper.toLessonDto(lessonById);
-        lessonDto.setTitle(lessonById.getLessonTitle());
 
-        return lessonDto;
+        return lessonMapper.toLessonDto(lessonById);
 
     }
 
@@ -86,10 +76,7 @@ public class LessonServiceImpl implements LessonService{
         LessonEntity lessonById = lessonRepository.findById(id)
                 .orElseThrow(() -> new LessonNotFoundException("Lesson id " + id + " not found"));
 
-        LessonDto lessonDto = lessonMapper.toLessonDto(lessonById);
-        lessonDto.setTitle(lessonById.getLessonTitle());
-
-        return lessonDto;
+        return lessonMapper.toLessonDto(lessonById);
 
     }
 }

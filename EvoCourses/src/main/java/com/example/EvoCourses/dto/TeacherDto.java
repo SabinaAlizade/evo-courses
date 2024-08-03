@@ -10,10 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LessonDto {
+public class TeacherDto {
     private Long id;
-    private String lessonTitle;
-    private Boolean isActive;
+    private String teacherName;
+    private String teacherSurname;
+    private Long lessonCount;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
