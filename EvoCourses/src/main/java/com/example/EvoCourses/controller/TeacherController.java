@@ -25,9 +25,6 @@ public class TeacherController {
 
     @PostMapping("/create")
     public ResponseEntity<TeacherDto> createTeacher(@Valid @RequestBody CreateTeacherDto createTeacherDto){
-//        return ResponseEntity
-//                .status(HttpStatus.CREATED)
-//                .body(teacherService.createTeacher(createTeacherDto));
         return ResponseEntity.ok(teacherService.createTeacher(createTeacherDto));
     }
 

@@ -18,9 +18,6 @@ public class LessonController {
 
     @PostMapping("/create")
     public ResponseEntity<LessonDto> createLesson(@Valid @RequestBody CreateLessonDto createLessonDto){
-//        return ResponseEntity
-//                .status(HttpStatus.CREATED)
-//                .body(lessonService.createLesson(createLessonDto));
         return ResponseEntity.ok(lessonService.createLesson(createLessonDto));
     }
 
