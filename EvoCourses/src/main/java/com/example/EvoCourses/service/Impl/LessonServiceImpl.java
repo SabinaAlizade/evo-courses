@@ -8,10 +8,11 @@ import com.example.EvoCourses.exception.LessonNotFoundException;
 import com.example.EvoCourses.mapper.LessonMapper;
 import com.example.EvoCourses.repository.LessonRepository;
 import com.example.EvoCourses.service.LessonService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +20,7 @@ public class LessonServiceImpl implements LessonService{
 
     private final LessonRepository lessonRepository;
     private final LessonMapper lessonMapper;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     @Override
     public LessonDto createLesson(CreateLessonDto createLessonDto) {
@@ -71,10 +73,22 @@ public class LessonServiceImpl implements LessonService{
                 .toList();
     }
 
+    @Cacheable(value = "lessonId", key = "#id")
     @Override
     public  LessonDto getLessonById(Long id){
+
+//        Object lessonkey = redisTemplate.opsForHash().get("LESSONKEY", id);
+//
+//        if (lessonkey != null) {
+//            return (LessonDto) lessonkey;
+//        }
         LessonEntity lessonById = lessonRepository.findById(id)
                 .orElseThrow(() -> new LessonNotFoundException("Lesson id " + id + " not found"));
+
+//        LessonDto lessonDto = lessonMapper.toLessonDto(lessonById);
+//
+//        redisTemplate.opsForHash().put("LESSONKEY", id, lessonDto);
+//        return lessonDto;
 
         return lessonMapper.toLessonDto(lessonById);
 
